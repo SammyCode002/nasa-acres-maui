@@ -45,7 +45,7 @@ These guide our reading and our first working meeting:
 
 - [ ] Read the papers and watch the OlmoEarth video
 - [ ] Explore the FEMS fire-weather tool
-- [ ] Sam and Noah meet Saturday to review the materials together
+- [ ] Sam and Noah meet Saturday, 5/30/2026, to review the materials together
 - [ ] Track hours so the project can be chunked appropriately
 - [ ] Meet with Ana to debrief the site visit and papers, then plan the project
 - [ ] Begin recreating CONUS results from OlmoEarth and Galileo
