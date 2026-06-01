@@ -39,7 +39,6 @@ These guide our reading and our first working meeting:
 | Read | Johnson et al. (2025), LFMC mapping: https://arxiv.org/pdf/2506.20132v2 |
 | Read | Globe-LFMC 2.0 dataset: https://www.nature.com/articles/s41597-024-03159-6 |
 | Read | OlmoEarth: https://arxiv.org/pdf/2511.13655 |
-| Watch | OlmoEarth webinar (AI2): https://drive.google.com/file/d/1JZ4r3hoS99rPXw7dKngcr9mi5YZPsIql/view?usp=sharing |
 | Review | Project scope doc (Google Doc from Ana) |
 | Explore | FEMS, Fire Environment Mapping System: https://fems.fs2c.usda.gov |
 
