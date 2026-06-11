@@ -1,0 +1,104 @@
+{
+  "type": "FeatureCollection",
+  "name": "kula_to_kihei_corridor",
+  "metadata": {
+    "project": "NASA ACRES Maui (github.com/SammyCode002/nasa-acres-maui)",
+    "purpose": "Single source of truth for the study-area AOI. Every script (clip_climate_normals.py, gvmi_baseline.py, future LFMC inference) reads its extent from this file so the corridor is defined in exactly one place.",
+    "crs": "EPSG:4326 (WGS84 lon/lat decimal degrees), per the GeoJSON spec.",
+    "aoi_bbox_west_south_east_north": [-156.470, 20.670, -156.290, 20.830],
+    "block_split": "Three mauka-to-makai blocks split by longitude (elevation runs roughly east=upcountry/high to west=coast/low), separated by 0.010 deg (~1 km) buffer gaps so no grid cell is shared or adjacent across folds. Use these as leakage-safe spatial cross-validation folds. See aoi/corridor.md for the full rationale.",
+    "buffer_deg": 0.010,
+    "author": "Samuel Dameg (SammyCode002)"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "aoi",
+        "name": "Kula-to-Kihei corridor",
+        "description": "Mauka-to-makai corridor from upper Kula (Haleakala slopes) down to Waiohuli Kai / South Kihei coast. This is the polygon clip scripts read."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-156.470, 20.670],
+            [-156.290, 20.670],
+            [-156.290, 20.830],
+            [-156.470, 20.830],
+            [-156.470, 20.670]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "cv_block",
+        "block": "coastal_kihei",
+        "position": "makai (west, low elevation)",
+        "lon_min": -156.470,
+        "lon_max": -156.416667,
+        "description": "Coastal Kihei block. Western third of the corridor. CV fold 1."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-156.470, 20.670],
+            [-156.416667, 20.670],
+            [-156.416667, 20.830],
+            [-156.470, 20.830],
+            [-156.470, 20.670]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "cv_block",
+        "block": "mid_slope",
+        "position": "mid-slope (center)",
+        "lon_min": -156.406667,
+        "lon_max": -156.353333,
+        "description": "Mid-slope block. Middle third of the corridor, separated from its neighbors by 0.010 deg buffer gaps. CV fold 2."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-156.406667, 20.670],
+            [-156.353333, 20.670],
+            [-156.353333, 20.830],
+            [-156.406667, 20.830],
+            [-156.406667, 20.670]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "cv_block",
+        "block": "upper_kula",
+        "position": "mauka (east, high elevation)",
+        "lon_min": -156.343333,
+        "lon_max": -156.290,
+        "description": "Upper Kula block. Eastern third of the corridor. CV fold 3."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-156.343333, 20.670],
+            [-156.290, 20.670],
+            [-156.290, 20.830],
+            [-156.343333, 20.830],
+            [-156.343333, 20.670]
+          ]
+        ]
+      }
+    }
+  ]
+}

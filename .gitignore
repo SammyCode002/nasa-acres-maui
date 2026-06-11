@@ -5,6 +5,9 @@ __pycache__/
 .venv/
 venv/
 env/
+# Any virtualenv variant, including the .venv-smoke used for the LFMC work
+*.venv*
+.venv-smoke/
 .ipynb_checkpoints/
 .pytest_cache/
 .mypy_cache/
@@ -16,18 +19,28 @@ env/
 service_account*.json
 token*.json
 
+# Local geodata: raw + clipped grids stay local, code goes to GitHub.
+# Everything under data/ is ignored (ESRI grids, GeoTIFFs, downloads).
+data/
+
 # Large data and model artifacts
 *.tif
 *.tiff
 *.nc
 *.h5
 *.hdf
+*.hdf5
 *.zip
 *.gdb/
 *.pt
 *.pth
 *.ckpt
 *.safetensors
+
+# Sibling clones must never be vendored into this repo if copied in by mistake
+lfmc-ai2/
+galileo/
+submodules/
 
 # IDE and OS
 .vscode/
