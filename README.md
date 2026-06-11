@@ -21,8 +21,6 @@ Deliverables: a GitHub repository with end-to-end mapping code, and monthly LFMC
 | Thomas Blamey | Faculty Mentor (UH Maui College) |
 | Nicolette van der Lee, EdD | Program Manager (UH Community Colleges) |
 
-Meetings: Mondays 8:00 AM HST, weekly to start, then bi-weekly.
-
 ## Questions to work through (from Ana)
 
 These framed the early reading. Where the work has since landed:
