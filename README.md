@@ -25,9 +25,9 @@ Deliverables: a GitHub repository with end-to-end mapping code, and monthly LFMC
 
 These framed the early reading. Where the work has since landed:
 
-1. What would be a good approach to extend the LFMC methodology to Hawaiʻi? (Open. The blocker is the Hawaiʻi LFMC label gap: Globe-LFMC 2.0 and FEMS NFMD have zero Hawaiʻi sites.)
+1. What would be a good approach to extend the LFMC methodology to Hawaiʻi? (Open. The blocker is the Hawaiʻi LFMC label gap: Globe-LFMC 2.0 and FEMS NFMD have zero Hawaiʻi sites. The specific open need is Maui field LFMC; the nearest leads are published Oʻahu guinea-grass field data and the NCAR RAL gridded FMC product as a benchmark.)
 2. Should we use OlmoEarth, Galileo, or both? Which training strategy should we first attempt (full fine-tuning, transfer learning, embeddings)? (Starting with Galileo, frozen encoder plus a fine-tuned head. OlmoEarth access requested through Ana.)
-3. What data do we need to collect for Hawaiʻi? (In progress. Climate covariates clipped to the corridor; HCDP and FEMS RAWS being pulled. Ground-truth LFMC for Hawaiʻi remains the hard gap.)
+3. What data do we need to collect for Hawaiʻi? (In progress. Climate covariates clipped to the corridor; HCDP and FEMS RAWS being pulled. Maui field LFMC remains the hard gap, now being pursued through NCAR contacts.)
 4. How should we divide tasks between Sam and Noah? (Settled. Sam: model, pipeline, baseline and validation maps. Noah: data collection, GIS, HCDP.)
 
 ## Reading list (assigned by Ana)
@@ -56,7 +56,7 @@ In progress / blocked:
 - [ ] Get a trained LFMC head: load a checkpoint if one exists, or fine-tune the head on Globe-LFMC. This is the gate for inference, visualization, and metrics (`conus_lfmc_inference.py` is staged and waiting on it)
 - [ ] Confirm the per-point export window with Ana (needed only for band-identical reproduction of the paper metrics; see `docs/lfmc_input_spec.md`, Q1)
 - [ ] Reproduce CONUS LFMC metrics with Galileo, then extend toward Maui
-- [ ] Source ground-truth LFMC for Hawaiʻi (no existing sites in Globe-LFMC 2.0 or FEMS NFMD)
+- [ ] Source Maui field LFMC for validation (none in Globe-LFMC 2.0 or FEMS NFMD; Oʻahu field data and the NCAR RAL product are the leads)
 - [ ] Evaluate OlmoEarth once access lands
 
 ## Repository layout
