@@ -53,7 +53,8 @@ Done:
 
 In progress / blocked:
 
-- [ ] Confirm with Ana the per-point export window so the full Galileo tile set can run (the one open blocker; see `docs/lfmc_input_spec.md`, open question Q1)
+- [ ] Get a trained LFMC head: load a checkpoint if one exists, or fine-tune the head on Globe-LFMC. This is the gate for inference, visualization, and metrics (`conus_lfmc_inference.py` is staged and waiting on it)
+- [ ] Confirm the per-point export window with Ana (needed only for band-identical reproduction of the paper metrics; see `docs/lfmc_input_spec.md`, Q1)
 - [ ] Reproduce CONUS LFMC metrics with Galileo, then extend toward Maui
 - [ ] Source ground-truth LFMC for Hawaiʻi (no existing sites in Globe-LFMC 2.0 or FEMS NFMD)
 - [ ] Evaluate OlmoEarth once access lands
@@ -70,6 +71,7 @@ Every script has a companion `.md` explaining what it builds, how it works, and 
 | `dnbr_burnscar.py` | dNBR burn-scar detection; derives the 2023 Kula burn perimeter from Sentinel-2. See `dnbr_burnscar.md`. |
 | `burn_area_gvmi_timeseries.py` | Validation chart: monthly mean GVMI inside the burn vs an unburned control ring. See `burn_area_gvmi_timeseries.md`. |
 | `export_lfmc_tifs.py` | Regenerates the per-point Galileo input tiles from GEE, the fallback for the private data bucket. See `export_lfmc_tifs.md`. |
+| `conus_lfmc_inference.py` | Staged runner for the Galileo LFMC model: loads the encoder, attaches the regression head (from a checkpoint or by fine-tuning), runs inference on the CONUS test points, renders the predicted map and error plot, and compares to the paper metrics. Waiting on a trained head. See `conus_lfmc_inference.md`. |
 | `docs/lfmc_input_spec.md` | The exact input contract the Galileo LFMC pipeline consumes (bands, window, normalization, h5py schema), with open questions for Ana. |
 | `data/` | Local geodata, git-ignored. Raw and clipped grids stay on disk; only code is committed. |
 
